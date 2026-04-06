@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover Your Stop Style™ Profile — Free Class by Eric Edmeades</title>
+<meta name="description" content="There are four distinct ways people successfully stop habits — and three of them will make your behavior stick even harder. Watch this free class and find out which one is yours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-deep:#0a0a0c;--bg-card:#111116;--bg-panel:#16161e;
+  --accent:#c97b28;--accent-glow:#e08f3a;
+  --text:#f0ede8;--text-muted:#8a8890;--text-dim:#5a5860;
+  --border:rgba(255,255,255,0.07);
+  --radius:12px;--radius-sm:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;font-weight:400;color:var(--text);background:var(--bg-deep);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;line-height:1.2}
+a{color:var(--accent);text-decoration:none}
+
+/* ── TOP BAR ── */
+.topbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,48px);height:56px;background:rgba(10,10,12,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.logo-mark{width:34px;height:34px;border-radius:6px;background:var(--bg-panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;font-size:14px;color:var(--accent);letter-spacing:.5px}
+.topbar-title{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.topbar-title span{color:var(--text-dim);margin:0 6px}
+.topbar-link{color:inherit;text-decoration:none;transition:color .2s}
+.topbar-link:hover{color:var(--accent)}
+.pill-badge{display:flex;align-items:center;gap:8px;padding:5px 14px 5px 10px;border-radius:999px;background:rgba(201,123,40,.1);border:1px solid rgba(201,123,40,.25);font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(201,123,40,.5)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(201,123,40,0)}}
+
+/* ── HERO ── */
+.hero{max-width:1120px;margin:0 auto;padding:64px clamp(16px,4vw,48px) 40px;text-align:center}
+.hero-label{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;animation:fadeUp .7s ease both}
+.hero-label::before,.hero-label::after{content:'';width:32px;height:1px;background:var(--accent)}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;margin-bottom:20px;animation:fadeUp .7s .1s ease both}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{max-width:680px;margin:0 auto 32px;font-size:clamp(1rem,1.8vw,1.15rem);font-weight:300;color:var(--text-muted);line-height:1.7;animation:fadeUp .7s .2s ease both}
+.meta-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;animation:fadeUp .7s .3s ease both}
+.meta-pill{display:flex;align-items:center;gap:6px;padding:7px 16px;border-radius:999px;background:var(--bg-card);border:1px solid var(--border);font-size:13px;font-weight:500;color:var(--text-muted)}
+.meta-pill svg{width:14px;height:14px;color:var(--accent);flex-shrink:0}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── STATS BANNER ── */
+.stats-banner{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-card)}
+.stats-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding:0 clamp(16px,4vw,48px)}
+.stat-item{padding:22px 12px;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-value{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.1rem,2vw,1.35rem);color:var(--accent);margin-bottom:2px}
+.stat-label{font-size:12px;font-weight:500;color:var(--text-dim);letter-spacing:.06em;text-transform:uppercase}
+
+/* ── TWO-COLUMN LAYOUT ── */
+.two-col{max-width:1120px;margin:0 auto;padding:40px clamp(16px,4vw,48px) 80px;display:grid;grid-template-columns:1fr 340px;gap:36px;align-items:start}
+
+/* LEFT COLUMN */
+.video-wrap{position:relative;width:100%;padding-bottom:56.25%;border-radius:var(--radius);overflow:hidden;background:#000;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* TABS */
+.tabs{margin-top:32px}
+.tab-nav{display:flex;gap:4px;border-bottom:1px solid var(--border);margin-bottom:24px;overflow-x:auto}
+.tab-btn{padding:12px 20px;font-family:'Figtree',sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap}
+.tab-btn:hover{color:var(--text-muted)}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* About tab */
+.tab-panel h2{font-size:1.5rem;margin-bottom:16px}
+.tab-panel p{color:var(--text-muted);margin-bottom:14px;font-weight:300}
+
+/* Learn tab */
+.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.learn-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px}
+.learn-card .icon{font-size:1.6rem;margin-bottom:8px}
+.learn-card h4{font-family:'Figtree',sans-serif;font-weight:600;font-size:.95rem;margin-bottom:6px;color:var(--text)}
+.learn-card p{font-size:.88rem;color:var(--text-muted);font-weight:300;line-height:1.6}
+
+/* Reviews tab */
+.reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.review-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px}
+.review-stars{color:var(--accent);font-size:14px;margin-bottom:10px;letter-spacing:2px}
+.review-card blockquote{font-style:italic;font-size:.92rem;color:var(--text-muted);line-height:1.65;margin-bottom:12px;font-weight:300}
+.review-card cite{font-style:normal;font-size:.8rem;font-weight:500;color:var(--text-dim)}
+
+/* Instructor tab */
+.instructor{display:flex;gap:24px;align-items:flex-start}
+.instructor-photo{width:160px;height:220px;border-radius:var(--radius);object-fit:cover;object-position:top;flex-shrink:0;border:1px solid var(--border)}
+.instructor-info h3{font-size:1.35rem;margin-bottom:4px}
+.instructor-info .title{font-size:.88rem;color:var(--accent);font-weight:500;margin-bottom:16px}
+.instructor-info p{font-size:.92rem;color:var(--text-muted);font-weight:300;margin-bottom:12px}
+.instructor-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.instructor-stat{text-align:center;padding:14px 8px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm)}
+.instructor-stat .val{font-family:'Playfair Display',serif;font-weight:900;font-size:1.05rem;color:var(--accent);margin-bottom:2px}
+.instructor-stat .lbl{font-size:11px;color:var(--text-dim);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+
+/* RIGHT SIDEBAR */
+.sidebar{position:sticky;top:80px}
+.enroll-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;margin-bottom:20px}
+.price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
+.price-free{font-family:'Playfair Display',serif;font-weight:900;font-size:2.2rem;color:var(--text)}
+.price-old{font-size:.95rem;color:var(--text-dim);text-decoration:line-through}
+.enroll-note{font-size:.82rem;color:var(--text-dim);margin-bottom:20px}
+.cta-btn{display:block;width:100%;padding:16px;border:none;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--accent),var(--accent-glow));color:#fff;font-family:'Figtree',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;text-align:center;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 20px rgba(201,123,40,.3)}
+.cta-btn:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(201,123,40,.45)}
+.cta-sub{text-align:center;font-size:.8rem;color:var(--text-dim);margin-top:12px}
+.includes{margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+.includes h4{font-family:'Figtree',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:14px}
+.includes li{list-style:none;display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text-muted);margin-bottom:10px;font-weight:300}
+.includes li::before{content:'✓';color:var(--accent);font-weight:600;flex-shrink:0;margin-top:1px}
+.share-row{display:flex;gap:8px;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+.share-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;border-radius:var(--radius-sm);background:var(--bg-panel);border:1px solid var(--border);font-size:.78rem;font-weight:500;color:var(--text-muted);cursor:pointer;transition:border-color .2s,color .2s;text-decoration:none}
+.share-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Trust block */
+.trust-block{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.trust-block h4{font-family:'Figtree',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:14px}
+.trust-block li{list-style:none;font-size:.85rem;color:var(--text-muted);font-weight:300;padding:6px 0;display:flex;align-items:center;gap:8px}
+.trust-block li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{border-top:1px solid var(--border);text-align:center;padding:32px clamp(16px,4vw,48px);font-size:.82rem;color:var(--text-dim);line-height:1.8}
+.footer a{color:var(--text-muted)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .two-col{grid-template-columns:1fr;padding-bottom:48px}
+  .sidebar{position:static;order:-1}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  .stat-item:nth-child(3),.stat-item:nth-child(4){border-top:1px solid var(--border)}
+  .learn-grid,.reviews-grid{grid-template-columns:1fr}
+  .instructor{flex-direction:column;align-items:center;text-align:center}
+  .instructor-stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .meta-pills{flex-direction:column;align-items:center}
+  .instructor-photo{width:120px;height:120px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo-mark">SI</div>
+    <div class="topbar-title"><a href="https://www.stopitsummit.com" target="_blank" rel="noopener" class="topbar-link">Stop It Summit</a><span>|</span><a href="https://www.ericedmeades.com" target="_blank" rel="noopener" class="topbar-link">Eric Edmeades</a></div>
+  </div>
+  <div class="pill-badge"><span class="pulse-dot"></span> Free Class</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">Free Mini-Masterclass with Eric Edmeades</div>
+  <h1>Discover Your <em>Stop Style&#8482;</em></h1>
+  <p class="hero-sub">There are four distinct ways people successfully stop habits &mdash; and three of them will make your behavior stick even harder. Watch this free class and find out which one is yours.</p>
+  <div class="meta-pills">
+    <span class="meta-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      ~15 min
+    </span>
+    <span class="meta-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      500,000+ lives changed
+    </span>
+    <span class="meta-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      No payment required
+    </span>
+    <span class="meta-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      No login required
+    </span>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<section class="stats-banner">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-value">4</div><div class="stat-label">Stop Styles&#8482;</div></div>
+    <div class="stat-item"><div class="stat-value">130+</div><div class="stat-label">Countries</div></div>
+    <div class="stat-item"><div class="stat-value">500k+</div><div class="stat-label">Lives Changed</div></div>
+    <div class="stat-item"><div class="stat-value">20+</div><div class="stat-label">Years of Research</div></div>
+  </div>
+</section>
+
+<!-- TWO-COLUMN -->
+<div class="two-col">
+  <main>
+    <!-- VIDEO -->
+    <div class="video-wrap" id="video">
+      <iframe src="https://www.youtube.com/embed/lWpvkK4KY0Q?rel=0&modestbranding=1&color=white" title="Stop Style Profile Free Class" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="learn">What You'll Learn</button>
+        <button class="tab-btn" data-tab="reviews">Reviews</button>
+        <button class="tab-btn" data-tab="instructor">Instructor</button>
+        <button class="tab-btn" data-tab="livecoaching">Live Coaching</button>
+      </nav>
+
+      <!-- ABOUT -->
+      <div class="tab-panel active" id="about">
+        <h2>Why Most People Fail to Stop Habits &mdash; And What Actually Works</h2>
+        <p>Most habit-breaking advice targets the behavior itself. That's why it rarely works. Eric Edmeades has spent two decades discovering that it's not <em>what</em> you stop that matters &mdash; it's <em>how</em> your nervous system is wired to stop. That's your Stop Style&#8482;.</p>
+        <p>There are four distinct Stop Styles. If you've ever tried willpower, cold-turkey, or "just deciding" to quit something and failed, there's a very specific reason: you were using the wrong style for your neurology.</p>
+        <p>Using the wrong three styles doesn't just fail &mdash; it reinforces the habit and chips away at your self-esteem with every attempt.</p>
+        <p>In this free class, Eric walks you through the science of Behavior Change Dynamics&#8482; &mdash; including evolutionary mismatch, shame release, and the role of identity in habit cessation &mdash; and helps you identify exactly which Stop Style is yours.</p>
+        <p>This isn't a motivational talk. It's a precision framework built on 15+ years of working with real people, rooted in evolutionary biology and behavioral psychology.</p>
+        <p>Once you know your Stop Style, change becomes effortless &mdash; not because you got stronger, but because you stopped fighting yourself.</p>
+      </div>
+
+      <!-- WHAT YOU'LL LEARN -->
+      <div class="tab-panel" id="learn">
+        <div class="learn-grid">
+          <div class="learn-card">
+            <div class="icon">&#x1f9ec;</div>
+            <h4>The Evolutionary Root</h4>
+            <p>Why humans are uniquely good at locking in behaviors &mdash; and why that backfires in the modern world.</p>
+          </div>
+          <div class="learn-card">
+            <div class="icon">&#x1f501;</div>
+            <h4>The Shame Loop</h4>
+            <p>How every failed quit attempt causes the behavior to stick deeper, and how to exit that loop permanently.</p>
+          </div>
+          <div class="learn-card">
+            <div class="icon">&#x1f9ed;</div>
+            <h4>Your Stop Style&#8482;</h4>
+            <p>Identify which of the four stopping profiles matches your neurology &mdash; and which three to avoid at all cost.</p>
+          </div>
+          <div class="learn-card">
+            <div class="icon">&#x1f6e3;&#xfe0f;</div>
+            <h4>Behavior Off-Ramps</h4>
+            <p>Automatic habits run below consciousness. Learn to locate and activate your personal off-ramp.</p>
+          </div>
+          <div class="learn-card">
+            <div class="icon">&#x1fa9e;</div>
+            <h4>Identity-Level Change</h4>
+            <p>Why surface-level behavior change fails, and how to update the identity that drives the behavior.</p>
+          </div>
+          <div class="learn-card">
+            <div class="icon">&#x1f4d0;</div>
+            <h4>The Method</h4>
+            <p>A structured, science-backed framework you can apply immediately to one habit you want to release today.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVIEWS -->
+      <div class="tab-panel" id="reviews">
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;Want to stop a behavior you don't like? You can do it in minutes. Get personal coaching from an expert in making positive shifts real and lasting. It's fun too.&rdquo;</blockquote>
+            <cite>&mdash; Observer Attendee</cite>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;I've participated in an incredible event that changes mindsets and behaviors live. It's exciting to see people relieved of their burdens.&rdquo;</blockquote>
+            <cite>&mdash; Observer Attendee</cite>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;Stopping a habit is not the same for everyone. Stop It Sunday can help by simply showing strategies. One might resonate and be the key for you.&rdquo;</blockquote>
+            <cite>&mdash; Observer Attendee</cite>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;Nail biting. Pattern interruption is key to stopping the behavior. I've experienced a clear shift.&rdquo;</blockquote>
+            <cite>&mdash; Participant Attendee</cite>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;Extremely useful both personally and as a therapist.&rdquo;</blockquote>
+            <cite>&mdash; Therapist Attendee</cite>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;Being able to engage with Eric directly is an invaluable experience. I can't believe he finds the time for this and is willing to help.&rdquo;</blockquote>
+            <cite>&mdash; Participant Attendee</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSTRUCTOR -->
+      <div class="tab-panel" id="instructor">
+        <div class="instructor">
+          <img class="instructor-photo" src="images/eric-portrait-3.jpg" alt="Eric Edmeades" loading="lazy">
+          <div class="instructor-info">
+            <h3>Eric Edmeades</h3>
+            <div class="title">Transformation Architect &middot; Creator of Behavior Change Dynamics&#8482;</div>
+            <p>Eric Edmeades is one of the world's leading authorities on behavioral change. For over 20 years, he has focused on a single core question: why we do what we do &mdash; and how to stop doing the things we most want to stop.</p>
+            <p>He quit caffeine at 18, alcohol at 19, and processed foods at 21 &mdash; long before he understood the science behind what he was doing intuitively. That personal experience became the foundation of Behavior Change Dynamics&#8482; and the Stop Style&#8482; system.</p>
+            <p>He is the creator of WILDFIT&reg; &mdash; a program that has transformed the relationship with food for over 500,000 people in 130+ countries. He was awarded a Medal by the Canadian Senate for his contribution to improving the quality of people's lives, and has spoken in the House of Lords on the intersection of human behavior and food industry accountability.</p>
+          </div>
+        </div>
+        <div class="instructor-stats">
+          <div class="instructor-stat"><div class="val">500k+</div><div class="lbl">Students</div></div>
+          <div class="instructor-stat"><div class="val">130+</div><div class="lbl">Countries</div></div>
+          <div class="instructor-stat"><div class="val">20+</div><div class="lbl">Years</div></div>
+          <div class="instructor-stat"><div class="val">8.4</div><div class="lbl">Avg Rating</div></div>
+        </div>
+      </div>
+
+      <!-- LIVE COACHING -->
+      <div class="tab-panel" id="livecoaching">
+        <h2>Join Eric Live Every Month</h2>
+        <p>Once a month, Eric hosts <strong>Stop It Sunday</strong> &mdash; a live coaching experience where he shares important distinctions and strategies about behavior cessation, and provides live hotseat coaching to attendees in real time.</p>
+        <p>This is your chance to work directly with Eric, ask questions about your specific situation, and watch transformations happen right before your eyes.</p>
+        <p>Stop It Sunday is name-your-own-price &mdash; including free. Eric believes that money should never get in the way of your transformation.</p>
+        <p style="margin-top:24px">
+          <a href="https://www.stopitsummit.com" target="_blank" rel="noopener" class="cta-btn" style="display:inline-block;width:auto;padding:14px 32px">Register at StopItSummit.com &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="enroll-card">
+      <div class="price-row">
+        <span class="price-free">Free</span>
+        <span class="price-old">$197 value</span>
+      </div>
+      <div class="enroll-note">No credit card required &middot; Instant access</div>
+      <a class="cta-btn" href="https://www.stopstyleprofile.com" target="_blank" rel="noopener">Get Your Stop Style Profile Now &rarr;</a>
+      <div class="cta-sub">&#x1f512; No sign-in required to watch</div>
+      <div class="includes">
+        <h4>This class includes</h4>
+        <ul>
+          <li>Full-length free mini-masterclass video</li>
+          <li>Introduction to all 4 Stop Styles&#8482;</li>
+          <li>The Evolutionary Mismatch framework</li>
+          <li>The Shame Release technique explained</li>
+          <li>Behavior Off-Ramp methodology</li>
+          <li>Presented by Eric Edmeades live</li>
+          <li>No expiry &mdash; watch at your own pace</li>
+        </ul>
+      </div>
+      <div class="share-row">
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffreeclass.stopstyleprofile.com" target="_blank" rel="noopener">Facebook</a>
+        <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ffreeclass.stopstyleprofile.com&text=Discover%20your%20Stop%20Style%20Profile%20%E2%80%94%20free%20class%20by%20Eric%20Edmeades" target="_blank" rel="noopener">X</a>
+        <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ffreeclass.stopstyleprofile.com" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="trust-block">
+      <h4>About Your Instructor</h4>
+      <ul>
+        <li>Canadian Senate Medal Recipient</li>
+        <li>500,000+ program graduates</li>
+        <li>130+ countries reached</li>
+        <li>Spoken at the House of Lords</li>
+        <li>Creator of WILDFIT&reg;</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2026 Eric Edmeades &middot; <a href="https://ericedmeades.com">ericedmeades.com</a> &middot; <a href="https://stopitsummit.com">StopItSummit.com</a></p>
+  <p>Stop Style&#8482; and Behavior Change Dynamics&#8482; are trademarks of Eric Edmeades.</p>
+</footer>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
