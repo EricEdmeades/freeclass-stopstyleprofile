@@ -143,6 +143,21 @@ a{color:var(--accent);text-decoration:none}
   .meta-pills{flex-direction:column;align-items:center}
   .instructor-photo{width:120px;height:120px}
 }
+
+/* ── POPUP MODAL ── */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.modal-overlay.visible{opacity:1;pointer-events:auto}
+.modal{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;max-width:480px;width:90%;text-align:center;position:relative;transform:translateY(20px);transition:transform .3s ease}
+.modal-overlay.visible .modal{transform:translateY(0)}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text-dim);font-size:1.4rem;cursor:pointer;transition:color .2s;line-height:1}
+.modal-close:hover{color:var(--text)}
+.modal-icon{font-size:2.4rem;margin-bottom:16px}
+.modal h2{font-size:1.5rem;margin-bottom:8px}
+.modal .modal-sub{font-size:.95rem;color:var(--accent);font-weight:500;margin-bottom:16px}
+.modal p{font-size:.92rem;color:var(--text-muted);font-weight:300;line-height:1.7;margin-bottom:24px}
+.modal .cta-btn{display:inline-block;width:auto;padding:14px 36px}
+.modal .modal-dismiss{display:block;margin-top:14px;font-size:.82rem;color:var(--text-dim);background:none;border:none;cursor:pointer;font-family:'Figtree',sans-serif;transition:color .2s}
+.modal .modal-dismiss:hover{color:var(--text-muted)}
 </style>
 </head>
 <body>
@@ -373,6 +388,19 @@ a{color:var(--accent);text-decoration:none}
   <p>Stop Style&#8482; and Behavior Change Dynamics&#8482; are trademarks of Eric Edmeades.</p>
 </footer>
 
+<!-- POPUP MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-icon">&#x1f3af;</div>
+    <h2>Want to Go Deeper?</h2>
+    <div class="modal-sub">Join Eric Edmeades Live</div>
+    <p>Once a month, Eric hosts <strong>Stop It Sunday</strong> &mdash; a live coaching session where he helps people break unwanted habits in real time. It's name-your-own-price, including free. Don't miss the next one.</p>
+    <a class="cta-btn" href="https://www.stopitsummit.com" target="_blank" rel="noopener">Register for Stop It Sunday &rarr;</a>
+    <button class="modal-dismiss" id="modalDismiss">No thanks, I'll keep watching</button>
+  </div>
+</div>
+
 <script>
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -382,6 +410,18 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.getElementById(btn.dataset.tab).classList.add('active');
   });
 });
+
+// Popup after 30 seconds (once per session)
+if (!sessionStorage.getItem('modalShown')) {
+  setTimeout(() => {
+    document.getElementById('modal').classList.add('visible');
+    sessionStorage.setItem('modalShown', '1');
+  }, 30000);
+}
+function closeModal() { document.getElementById('modal').classList.remove('visible'); }
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modalDismiss').addEventListener('click', closeModal);
+document.getElementById('modal').addEventListener('click', (e) => { if (e.target === e.currentTarget) closeModal(); });
 </script>
 </body>
 </html>
